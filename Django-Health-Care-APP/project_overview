@@ -1,0 +1,28 @@
+healthcare/
+├── core/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── templates/
+│   │   └── core/
+│   │       ├── base.html
+│   │       ├── home.html
+│   │       ├── about.html
+│   │       ├── services.html
+│   │       ├── contact.html
+│   │       └── doctors.html
+│   └── static/
+│       ├── icon/
+│       │   ├── icon2.png
+│       │   ├── download.png
+│       │   ├── download (1).png
+│       │   └── diabetes.png
+│       └── image/
+│           └── doc2.jpeg
+├── healthcare/
+│   ├── settings.py
+│   ├── urls.py
+├── db.sqlite3
+└── manage.py

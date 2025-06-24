@@ -1,0 +1,56 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Home | HealthCare{% endblock %}
+{% block content %}
+<!-- Banner -->
+<section class="bg-emerald-800 text-white">
+  <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center py-16 gap-8 px-4">
+    <!-- Left: Text -->
+    <div class="text-center lg:text-left lg:w-1/2">
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight">
+        Make Your Appointment<br />Now
+      </h1>
+      <p class="text-lg mb-6">
+        You can take your appointment by clicking the button "Make Appointment"
+        or you can see the doctor list by clicking the "Doctors" button.
+      </p>
+      <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+        <a href="{% url 'make_appointment' %}" class="bg-emerald-600 text-white px-6 py-2 rounded hover:bg-emerald-700">Make Appointment</a>
+        <a href="{% url 'doctors' %}" class="bg-emerald-600 text-white px-6 py-2 rounded hover:bg-emerald-700">Doctors</a>
+      </div>
+    </div>
+
+    <!-- Right: Image -->
+    <div class="lg:w-1/2">
+      <img src="{% static 'image/doctor.jpg' %}" alt="Doctor Image" class="w-full rounded-lg shadow-lg" />
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+    <main class="py-16">
+      <section class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-emerald-600">Our Services</h1>
+      </section>
+      <div class="container mx-auto flex flex-wrap justify-center gap-8 px-4">
+        <div class="w-72 bg-white shadow-lg rounded-lg p-6 text-center">
+          <img src="{% static 'icon/allergy.jpg' %}" alt="Allergies" class="w-28 mx-auto mb-4 rounded-md" />
+          <h2 class="text-xl font-semibold mb-2">Allergies</h2>
+          <p class="text-gray-600 mb-4">Allergies can be treated by a doctor with a proper prescription.</p>
+          <button class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-700">Make Appointment</button>
+        </div>
+        <div class="w-72 bg-white shadow-lg rounded-lg p-6 text-center">
+          <img src="{% static 'icon/cancer.jpg' %}" alt="Cancer" class="w-28 mx-auto mb-4 rounded-md" />
+          <h2 class="text-xl font-semibold mb-2">Cancer</h2>
+          <p class="text-gray-600 mb-4">Cancer treatment requires a doctor's diagnosis and care.</p>
+          <button class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-700">Make Appointment</button>
+        </div>
+        <div class="w-72 bg-white shadow-lg rounded-lg p-6 text-center">
+          <img src="{% static 'icon/diabetes.jpg' %}" alt="Diabetes" class="w-28 mx-auto mb-4 rounded-md" />
+          <h2 class="text-xl font-semibold mb-2">Diabetes</h2>
+          <p class="text-gray-600 mb-4">Doctors provide medication and guidance.</p>
+          <button class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-700">Make Appointment</button>
+        </div>
+      </div>
+
+{% endblock %}

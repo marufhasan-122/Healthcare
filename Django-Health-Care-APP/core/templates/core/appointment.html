@@ -1,0 +1,25 @@
+<!-- core/appointment.html -->
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Appointment | HealthCare{% endblock %}
+{% block content %}
+<section class="px-4 py-12">
+  <h1 class="text-4xl text-center font-bold text-emerald-600 mb-8">Make an Appointment</h1>
+  <form action="{% url 'make_appointment' %}" method="POST" class="max-w-md mx-auto space-y-4">
+    {% csrf_token %}
+    <input name="name" type="text" placeholder="Your name" required class="w-full p-3 border rounded" />
+    <input name="phone" type="text" placeholder="Your phone number" required class="w-full p-3 border rounded" />
+    
+    <select name="doctor" required class="w-full p-3 border rounded">
+      <option value="">Select a Doctor</option>
+      {% for doctor in doctors %}
+        <option value="{{ doctor.id }}">{{ doctor.name }} - {{ doctor.specialty }}</option>
+      {% endfor %}
+    </select>
+
+    <textarea name="message" placeholder="Describe your problem" rows="4" class="w-full p-3 border rounded"></textarea>
+    <input name="date" type="date" class="w-full p-3 border rounded" required />
+    <input type="submit" value="SEND" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700" />
+  </form>
+</section>
+{% endblock %}

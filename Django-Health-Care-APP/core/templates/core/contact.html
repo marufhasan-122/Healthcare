@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Contact | HealthCare{% endblock %}
+{% block content %}
+<div class="container mx-auto px-4 py-12">
+  <h1 class="text-4xl font-bold text-center text-emerald-600 mb-8">Contact With Us</h1>
+  <form action="{% url 'contact_form' %}" method="POST" class="max-w-md mx-auto space-y-4">
+    {% csrf_token %}
+    <input name="name" type="text" placeholder="Type your name" required class="w-full p-3 border rounded" />
+    <input name="email" type="email" placeholder="Type your email" required class="w-full p-3 border rounded" />
+    <textarea name="message" placeholder="Type your message" rows="4" class="w-full p-3 border rounded"></textarea>
+    <input type="submit" value="SEND" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700" />
+  </form>
+</div>
+{% endblock %}
